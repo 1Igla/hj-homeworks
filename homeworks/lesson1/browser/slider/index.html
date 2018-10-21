@@ -11,7 +11,20 @@
 <body>
   <section class="product-item">
     <div class="product-gallery">
-      <img src="i/spinner.gif" alt="" id="slider">
+      <img src="i/airmax-jump.png" alt="" id="slider">
+      <script>
+      var arr = ["i/airmax-jump.png", "i/airmax-on-foot.png", "i/airmax-playground.png", "i/airmax-top-view.png", "i/airmax.png"];
+      var n = 0;
+      setInterval(function() {
+        var len = document.getElementById("slider");
+        len.src = arr[n];
+
+        if( ++n === arr.length ) {
+          n=1;
+        }
+      }, 1000);
+
+      </script>
     </div>
     <div class="product-data">
       <p class="product-firm">Nike</p>
@@ -20,7 +33,6 @@
       <p class="product-colors">Black/Pink Pow/Tour Yellow/White</p>
       <p class="product-size">38-42</p>
       <button class="buy-btn">add to cart</button>
-11111111111111111111111111111111111111111111111
       <div class="product-info">
         <p class="product-description">
           The Nike Air Max Tavas SD Men's Shoe recalls the profile of the iconic running original with a Max Air unit in the heel and multi-surface Waffle outsole. A lightweight upper and gradient detail offer a comfortable fit and dynamic look.
