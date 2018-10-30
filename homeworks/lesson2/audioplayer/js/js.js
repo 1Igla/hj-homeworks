@@ -16,6 +16,7 @@ var back = document.getElementsByClassName('back')[0];
 var stop = document.getElementsByClassName('stop')[0];
 var next = document.getElementsByClassName('next')[0];
 var title = document.getElementsByClassName('title')[0];
+var stylus = document.getElementsByClassName('stylus')[0];
 
 var arrName = ["LA Chill Tour", "This is it band", "LA Fusion Jam"];
 var arrLink = ["https://netology-code.github.io/hj-homeworks/html-element-collection/audioplayer/mp3/LA%20Chill%20Tour.mp3", "https://netology-code.github.io/hj-homeworks/html-element-collection/audioplayer/mp3/This%20is%20it%20band.mp3", "https://netology-code.github.io/hj-homeworks/html-element-collection/audioplayer/mp3/LA%20Fusion%20Jam.mp3"];
@@ -24,10 +25,11 @@ play.onclick = () => {
 
   if ( player.paused ) {
     player.play();
-    togg;
+    togg.classList.toggle('fa-pause');
   } else {
     player.pause();
-   // togg.classList.toggle('fa-play')
+   togg.classList.toggle('fa-pause');
+   stylus.classList.toggle('mediaplayer.play stylus');
   }
 }
 
