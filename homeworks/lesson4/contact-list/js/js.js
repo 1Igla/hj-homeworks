@@ -5,13 +5,13 @@ var ul = element.querySelector('ul');
 ul.querySelector('li').remove();
 
 var fragment = document.createDocumentFragment();
-var browsers = JSON.parse(loadContacts());
+var contacts = JSON.parse(loadContacts());
 
-browsers.forEach(function(browser) {
+contacts.forEach(function(contact) {
     let li = document.createElement('li');
-    li.textContent = browser.name;
-    li.setAttribute('data-email', browser.email);
-    li.setAttribute('data-phone', browser.phone);
+    li.textContent = contact.name;
+    li.setAttribute('data-email', contact.email);
+    li.setAttribute('data-phone', contact.phone);
     fragment.appendChild(li);
 });
 
