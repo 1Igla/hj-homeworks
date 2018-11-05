@@ -15,5 +15,4 @@ browsers.forEach(function(browser) {
     fragment.appendChild(li);
 });
 
-console.log(ul.appendChild(fragment));
-console.log(ul.appendChild(fragment)[0]);
+ul.appendChild(fragment);
