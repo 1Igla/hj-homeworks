@@ -6,7 +6,7 @@ var content = document.getElementById('content');
 var preloader = document.getElementById('preloader');
 var xhr = new XMLHttpRequest();
 
-xhr.open("GET", "components/email-tab.html",false);
+xhr.open("GET", "email-tab.html",false);
 xhr.addEventListener("progress", () => {
   preloader.classList.remove('hidden');
 });
@@ -15,7 +15,7 @@ email.classList.add('active');
 content.innerHTML = xhr.responseText;
 
 var xhr2 = new XMLHttpRequest();
-xhr2.open("GET", "components/sms-tab.html",false);
+xhr2.open("GET", "sms-tab.html",false);
 xhr2.send();
 
 email.onclick = function() {
