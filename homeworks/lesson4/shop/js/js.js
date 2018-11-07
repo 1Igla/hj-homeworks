@@ -1,20 +1,21 @@
 'use strict';
 
-var but = document.querySelectorAll('button.add'); // товар
-var count = document.getElementById('cart-count'); //товаров в корзине
-var totalPrice = document.getElementById('cart-total-price'); // общая цена
-console.log(totalPrice);
+const products = document.querySelectorAll('button.add'); // товар
+const inbascket = document.getElementById('cart-count'); //товаров в корзине
+const totalPrice = document.getElementById('cart-total-price'); // общая цена
 
-var i = 0;
-var n = 0;
 function add() {
-  count.innerHTML = ++i;
-  n += Number(this.dataset.price);
-  console.log(n)
-  totalPrice.innerHTML = getPriceFormatted(n);
-}
+  let i = 0;
+  let n = 0;
+  return function() {
+    inbascket.innerHTML = ++i;
+    n += Number(this.dataset.price);
+    totalPrice.innerHTML = getPriceFormatted(n);
+  }
+};
 
+var f=add();
 
-for (const k of but){
-	k.addEventListener('click', add);
+for (const prod of products){
+	prod.addEventListener('click', f);
 }

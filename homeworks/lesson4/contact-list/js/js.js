@@ -1,11 +1,11 @@
 'use strict';
 
-var element  = document.getElementById('container');
-var ul = element.querySelector('ul');
+const element  = document.getElementById('container');
+const ul = element.querySelector('ul');
 ul.querySelector('li').remove();
 
-var fragment = document.createDocumentFragment();
-var contacts = JSON.parse(loadContacts());
+const fragment = document.createDocumentFragment();
+const contacts = JSON.parse(loadContacts());
 
 contacts.forEach(function(contact) {
     let li = document.createElement('li');
