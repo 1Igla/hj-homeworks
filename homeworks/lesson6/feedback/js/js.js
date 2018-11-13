@@ -1,18 +1,23 @@
 'use strict';
-var title = document.querySelectorAll('input');
-var arr_title= Array.from(title);
-var textarea = document.querySelectorAll('textarea');
-var arr_textarea = Array.from(textarea);
+const title = document.querySelectorAll('input');
+const arr_title= Array.from(title);
+const form = document.querySelector('.contentform')
+const out = document.getElementById('output');
+const outs = out.querySelectorAll('output');
+const arr_outs = Array.from(outs);
+const textarea = document.querySelectorAll('textarea');
+const arr_textarea = Array.from(textarea);
 Array.prototype.push.apply(arr_title, arr_textarea);
-var button = document.querySelector('button');
-var button2 = document.querySelectorAll('button')[1];
-button2.addEventListener('click', addonclick);
-var main = document.querySelector('main');
-var address = document.querySelector('input[name="zip"]');
-var outaddress = document.getElementById('zip');
+const button = document.querySelector('button');
+const button2 = document.querySelectorAll('button')[1];
+    button2.addEventListener('click', addonclick);
+const main = document.querySelector('main');
+const address = document.querySelector('input[name="zip"]');
+const outaddress = document.getElementById('zip');
+
 
 address.onkeypress = function(e)  { // Индекс
-  e = e || event;
+  var e = e || event;
   if (e.ctrlKey || e.altKey || e.metaKey) return;
     var chr = getChar(e);
     if (chr == null) return;
@@ -57,13 +62,14 @@ button.addEventListener('click', onclick)
 function onclick(event) {//отправка формы
   event.preventDefault();
   main.classList.remove("hidden");
-  console.log(outaddress.value = address.value);
-  console.log(document.getElementById('address').value = document.querySelector('input[name="address"]').value);
-  console.log(document.getElementById('name').value = document.querySelector('input[name="name"]').value);
-  console.log(document.getElementById('lastname').value = document.querySelector('input[name="lastname"]').value);
-  console.log(document.getElementById('company').value = document.querySelector('input[name="company"]').value);
-  console.log(document.getElementById('role').value = document.querySelector('input[name="role"]').value);
-  console.log(document.getElementById('city').value = document.querySelector('input[name="city"]').value);
+
+  arr_outs.forEach(function (e) {
+    let needInput = form.querySelector(`[name="${e.id}"]`);
+    if (needInput) {
+      e.value = needInput.value;
+    }
+  })
+
 };
 
 function addonclick() { //изменение формы

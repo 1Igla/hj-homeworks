@@ -13,7 +13,7 @@ function onLoad() {
     let img = document.createElement("img");
 
     li.dataset.title = b.title;
-    console.log( b.title);
+    console.log(b.title);
     li.dataset.author = b.author.name;
     li.dataset.info = b.info;
     li.dataset.price = b.price;
