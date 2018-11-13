@@ -30,10 +30,10 @@ for(const ev of btn) {
   function showKey(event) {
     ++n;
     if(event.altKey) {
-     mus.src = middle[n];
-     setm.classList.remove('lower');
+     mus.src = lower[n];
+     setm.classList.remove('middle');
      setm.classList.remove('higher');
-     setm.classList.add('middle');
+     setm.classList.add('lower');
       if(n == middle.length-1) {
         n=-1;
       }
@@ -46,10 +46,10 @@ for(const ev of btn) {
         n=-1;
       }
     }else {
-      mus.src = lower[n];
+      mus.src = middle[n];
       setm.classList.remove('higher');
-      setm.classList.remove('middle');
-      setm.classList.add('lower');
+      setm.classList.remove('lower');
+      setm.classList.add('middle');
 
       if(n == lower.length-1) {
         n=-1;

@@ -19,12 +19,13 @@ var cod = [];
 function secret(ev) {
  cod.push(ev.code);
  var enter = cod.join('');
+ console.log(cod);
 
   let sec = ['KeyY','KeyT', 'KeyN', 'KeyJ', 'KeyK', 'KeyJ', 'KeyU', 'KeyB', 'KeyZ'];
   let secret = sec.join('');
 
-  if(cod.length > sec.length ) {
-   cod.splice(0, (cod.length-sec.length))
+  if(cod.length == sec.length ) {
+   cod.shift();
   }
 
   if(enter === secret) {
