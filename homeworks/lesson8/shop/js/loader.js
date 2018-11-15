@@ -1,5 +1,4 @@
 'use strict';
-
 const items = [
   { title: 'Очки', pic: './i/sq-sample1.jpg', price: 1290 },
   { title: 'Шапка', pic: './i/sq-sample2.jpg', price: 490 },
