@@ -1,22 +1,13 @@
 'use strict';
 
-const prod = document.querySelectorAll('.add-to-cart');
-const products = Array.from(prod);
-
-
-function iter(atr) {
-  for(var i=0; i < items.length; i++ ) {
-    if(items[i].title === atr) {
-      return items[i];
-    }
+function click(event) {
+  if(event.target.classList.contains('add-to-cart')) {
+    event.preventDefault();
+    addToCart({
+      'title': event.target.dataset.title,
+      'price': event.target.dataset.price,
+    })
   }
-};
+}
 
-
-for (const prod of products){
-  const titl = prod.getAttribute('data-title');
-  prod.addEventListener('click', function () {
-    addToCart(iter(titl));
-    console.log(titl);
-  });
-};
+document.getElementsByClassName('items-list')[0].addEventListener('click', click)
