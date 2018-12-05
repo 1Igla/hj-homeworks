@@ -40,6 +40,7 @@ stop.onclick = () => {    //stop
     player.pause();
     player.currentTime = 0;
   }
+  mediaplayer.classList.remove('play');
 };
 
 var i = arrLink.length;
