@@ -1,6 +1,8 @@
 'use strict';
 
 const prod = document.querySelectorAll('.add-to-cart');
+console.log(prod);
+console.log(showMore);
 const products = Array.from(prod);
 
 
@@ -13,10 +15,13 @@ function iter(atr) {
 };
 
 
+
 for (const prod of products){
-  const titl = prod.getAttribute('data-title');
-  prod.addEventListener('click', function () {
-    addToCart(iter(titl));
-    console.log(titl);
-  });
+  var titl = prod.getAttribute('data-title');
+  prod.addEventListener('click', function() {
+    return addToCart(iter(titl));
+  //   console.log(titl);
+  })
 };
+
+//showMore.addEventListener('click', function() {
