@@ -32,16 +32,16 @@ for(const ev of btn) {
     if(event.altKey) {
      mus.src = lower[n];
      setm.classList.remove('middle');
-     setm.classList.remove('higher');
-     setm.classList.add('lower');
+     setm.classList.remove('lower');
+     setm.classList.add('higher');
       if(n == middle.length-1) {
         n=-1;
       }
     }else if(event.shiftKey){
       mus.src = higher[n];
-      setm.classList.remove('lower');
+      setm.classList.remove('higher');
       setm.classList.remove('middle');
-      setm.classList.add('higher');
+      setm.classList.add('lower');
       if(n == higher.length-1) {
         n=-1;
       }

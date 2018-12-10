@@ -9,12 +9,12 @@ function toggleMenu(event) {
     this.classList.add('show');
     this.classList.remove('hide');
     }
-    event.stopPropagation();
 }
 
 function openLink(event) {
   console.log(this.textContent);
   console.log(event.target);
+  event.stopPropagation();
 }
 
 function init(node) {
