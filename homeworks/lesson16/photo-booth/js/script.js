@@ -3,8 +3,6 @@ var elem = document.createElement("video");
 elem.setAttribute("autoplay", "autoplay");
 var audio = document.createElement("audio");
 var app = document.querySelector('.app');
-app.appendChild(video);
-app.appendChild(image);
 
 var container = document.querySelector('.container').appendChild(elem);
 var errorText = document.getElementById('error-message');
@@ -26,7 +24,8 @@ if(navigator.webkitGetUserMedia!=null) {
       function(stream) {
         controls.style.display = 'block';
         // включаем поток в URL
-        video.src = window.webkitURL.createObjectURL(stream);
+        video.src = window.URL.createObjectURL(stream);
+        app.appendChild(video);
       },
       function(e) {
         errorText.appendChild(document.createTextNode("error happened"));
@@ -48,6 +47,7 @@ function takePicture(stream) {
     ctx.drawImage(video, 0, 0);
 
     var image = document.createElement("image");
+    app.appendChild(image);
     image.setAttribute('src', canvas.toDataURL('image/png'));
     list.style.visibility = 'inherit';
     let pic = takeTemplate(image);
@@ -76,7 +76,7 @@ function el(tag, attr, children) {
   return element;
 };
 
-function takeTemplate(image){
+function takeTemplate(img){
   return el('figure', null, [
     el('img', {src: img}),
     el('figcaption', null, [
